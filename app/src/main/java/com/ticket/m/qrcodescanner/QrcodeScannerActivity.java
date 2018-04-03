@@ -72,14 +72,11 @@ private IntentIntegrator qrScan;
                 try
                 {
                     JSONObject obj=new JSONObject(result.getContents());
-                    source.setVisibility(View.VISIBLE);
-                    destination.setVisibility(View.VISIBLE);
-                    fair.setVisibility(View.VISIBLE);
                     sourceName.setText(obj.getString("sourceStation"));
                     destinationName.setText(obj.getString("destinationStation"));
                     fairPrice.setText(obj.getString("fair"));
-                    bookingTime.setText(obj.getString("bookingTime"));
-                    validity.setText(obj.getString("expiry_time"));
+                    bookingTimeValue.setText(obj.getString("bookingTime"));
+                    validityTime.setText(obj.getString("expiry_time"));
                 }
                 catch(Exception e)
                 {

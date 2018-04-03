@@ -27,6 +27,11 @@ public class LoginActivity extends AppCompatActivity {
         emailId=findViewById(R.id.emailId);
         password=findViewById(R.id.password);
         loginBtn=findViewById(R.id.loginBtn);
+        auth=FirebaseAuth.getInstance();
+        if(auth.getCurrentUser() !=null)
+        {
+            startActivity(new Intent(this,QrcodeScannerActivity.class));
+        }
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     password.setError(" Password should be of minimum of size 8");
                 }
-                auth=FirebaseAuth.getInstance();
+
                 auth.signInWithEmailAndPassword(emailId.getText().toString(),password.getText().toString())
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:animationCache="false"
     tools:context="com.ticket.m.qrcodescanner.QrcodeScannerActivity">
-
     <Button
         android:id="@+id/scan"
         android:layout_width="wrap_content"
@@ -14,80 +13,122 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20sp"
         android:text="scan" />
-    <TextView
-        android:id="@+id/source"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/scan"
+        android:orientation="horizontal"
         android:layout_marginTop="20sp"
-        android:text="Source :" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@id/source"
-        android:id="@+id/sourceName"
         android:layout_below="@id/scan"
-        android:layout_marginTop="20sp" />
+        android:id="@+id/linear1"
+        >
 
-    <TextView
-        android:id="@+id/destination"
+        <TextView
+            android:id="@+id/source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source :" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/source"
+            android:id="@+id/sourceName"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/source"
+        android:layout_below="@id/linear1"
+        android:orientation="horizontal"
         android:layout_marginTop="20sp"
-        android:text="Destination :" />
-    <TextView
+        android:id="@+id/linear2">
+
+
+        <TextView
+            android:id="@+id/destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination :" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/destinationName"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear3"
+        android:orientation="horizontal"
+        android:layout_below="@id/linear2"
+        android:layout_marginTop="20sp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fair :"
+            android:id="@+id/fair"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fairPrice"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear3"
+        android:id="@+id/linear4"
+        android:layout_marginTop="20sp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookingTime"
+            android:text="Booked at: " />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookingTimeValue"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:layout_below="@id/sourceName"
-        android:layout_alignRight="@id/destination"
-        android:id="@+id/destinationName"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:text="Fair :"
-        android:id="@+id/fair"
-        android:layout_below="@id/destination"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:layout_alignRight="@id/fair"
-        android:id="@+id/fairPrice"
-        android:layout_below="@id/destinationName"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fair"
-        android:id="@+id/bookingTime"
-        android:text="Booked at: "
-        android:layout_marginTop="20sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fairPrice"
-        android:layout_alignRight="@id/bookingTime"
-        android:layout_marginTop="20sp"
-        android:id="@+id/bookingTimeValue"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Valid till midnight "
-        android:id="@+id/validity"
-        android:layout_below="@id/bookingTime"
-        android:layout_marginTop="20sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/validityTime"
-        android:layout_below="@id/bookingTimeValue"
-        android:layout_alignRight="@id/validity"
-        android:layout_marginTop="20sp"/>
+        android:orientation="horizontal"
+        android:id="@+id/linear5"
+        android:layout_below="@id/linear4">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valid till midnight "
+            android:id="@+id/validity"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/validityTime"
+            />
+
+
+    </LinearLayout>
 
 
 
