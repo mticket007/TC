@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 public class QrcodeScannerActivity extends AppCompatActivity {
 private Button scan;
-private TextView source,destination,sourceName,destinationName,fair,fairPrice,bookingTime,bookingTimeValue,validity,validityTime;
+private TextView source,destination,sourceName,destinationName,fare,farePrice,bookingTime,bookingTimeValue,validity,validityTime,classValue,typeValue;
 private IntentIntegrator qrScan;
 
     @Override
@@ -30,12 +30,14 @@ private IntentIntegrator qrScan;
         destination=findViewById(R.id.destination);
         sourceName=findViewById(R.id.sourceName);
         destinationName=findViewById(R.id.destinationName);
-        fair=findViewById(R.id.fair);
-        fairPrice=findViewById(R.id.fairPrice);
+        fare=findViewById(R.id.fare);
+        farePrice=findViewById(R.id.farePrice);
         bookingTime=findViewById(R.id.bookingTime);
         bookingTimeValue=findViewById(R.id.bookingTimeValue);
         validity=findViewById(R.id.validity);
         validityTime=findViewById(R.id.validityTime);
+        typeValue=findViewById(R.id.typeValue);
+        classValue=findViewById(R.id.classValue);
 
         qrScan=new IntentIntegrator(this);
 
@@ -74,9 +76,12 @@ private IntentIntegrator qrScan;
                     JSONObject obj=new JSONObject(result.getContents());
                     sourceName.setText(obj.getString("sourceStation"));
                     destinationName.setText(obj.getString("destinationStation"));
-                    fairPrice.setText(obj.getString("fair"));
+                    farePrice.setText(obj.getString("fare"));
                     bookingTimeValue.setText(obj.getString("bookingTime"));
                     validityTime.setText(obj.getString("expiry_time"));
+                    classValue.setText(obj.getString("type_of_ticket"));
+                    typeValue.setText(obj.getString("type_of_journey"));
+
                 }
                 catch(Exception e)
                 {
